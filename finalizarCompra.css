@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Odibee Sans', cursive;
+}
+
+.body{
+    background-color: rgb(32, 32, 32);
+}
+
+.header{
+    display: flex;
+    height: 180px;
+    background-color: rgb(32, 32, 32);
+}
+
+.div-logo{
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    height: 100px;
+}
+
+.div-icon{
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    font-size: 50px;
+    color: black;
+}
+
+.icon-buscar{
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-left:3px;
+}
+
+.a-icon-buscar{
+    color: black;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.main-sectionP{
+    width: 70%;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+}
+
+.div-h1{
+    display: flex;
+    justify-content: center;
+}
+
+.h1{
+    font-size: 70px;
+    padding: 30px;
+}
+
+.main-section-div{
+    display: flex;
+    height: 70vh;
+}
+
+.main-div1{
+    display: flex;
+    width: 35%;
+    background-color: aqua;
+}
+
+.main-div2{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-h3{
+    display: flex;
+    justify-content: center;
+}
+
+.h3{
+    font-size: 40px;
+    padding:20px;
+}
+
+.div-label-input{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px 20px 100px;
+}
+
+.label{
+    font-size: 25px;
+}
+
+.input{
+    font-size: 25px;
+}
+
+.select-option{
+    display: flex;
+}
+
+.footer{
+    height: 15vh;
+}

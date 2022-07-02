@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://kit.fontawesome.com/88fb4cb13d.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Odibee+Sans&display=swap" rel="stylesheet">
+        <title>Lautaro Ocampo</title>
+    </head>
+    <body class="body">
+        
+     <div class="header-espacio">
+
+         <header class="header" id="header">
+                 <div class="div-logo">    
+                         <a href="/index.html"><img class="logo" src="/img/Logo.png" alt="Logo de marca"></a>
+                 </div>
+                 <div class="div-input" id="div-input">
+                     <input class="input" type="text" id="input">
+                     <i class=" icon-buscar fa-solid fa-magnifying-glass"></i> 
+                 </div>
+                 <div class="div-icon">
+                     <i id="icon-carrito" class="fa-solid fa-cart-shopping icon"></i>
+                 </div>
+     </div>
+    </header>
+    <div class="div-input-mobile"> 
+        <input class="input-mobile" type="text">
+        <i class=" icon-buscar fa-solid fa-magnifying-glass"></i>
+    </div>
+    <nav class="nav">
+        <ul class="nav-list">
+            <a class="a-list-item" href="#"><li class="list-item">Abrigos</li></a>
+            <a class="a-list-item" href="#"><li class="list-item">Sacos</li></a>
+            <a class="a-list-item" href="#"><li class="list-item">Camisas</li></a>
+            <a class="a-list-item" href="#"><li class="list-item">Pantalones</li></a>
+            <a class="a-list-item" href="#"><li class="list-item">Zapatos</li></a>
+            <a class="a-list-item" href="#"><li class="list-item">Accesorios</li></a>
+        </ul>
+        <div class="carrito carrito-position" id ="carrito">
+                <div class="carrito-main">
+                    <div id="carrito-divP">
+                       <div class="carrito-divPP">
+                          <p class="carrito-p" id="carrito-p">Agrega productos al carrito!</p>
+                       </div>
+                    </div>
+                       <div class="carrito-divS">
+                                   <hr class="carrito-hr">
+                               <div class="carrito-div-total">
+                                   <p class="carrito-total" id="carrito-total">Total: 0$</p>
+                               </div>
+                               <div class="botones-div">
+                                    <button class="boton-vermas" id="boton-eliminar">Eliminar todo</button>
+                                    <a href="/finalizarCompra.html" class="boton-vermas">Pagar</a>
+                               </div>
+                       </div>
+                       </div>
+                </div>
+        </div>
+    </nav>
+    <main class="main">
+
+        <section class="main-sectionP">
+            <div class="main-div1">
+                <div class="div-rango">
+                    <p class="rango">Rango de precio</p>
+                </div>
+                <div class="div-label">
+                    <label class="label" for="minimo">Mínimo</label>
+                </div>
+                <div class="div-input-rango">
+                    <input class="input-rango" type="range" name="minimo" id="minimo">
+                </div>
+                <div class="div-numero-minmax">
+                    <p id="num-min" class="numero-minimo">50000$</p>
+                </div>
+                <div class="div-label">
+                    <label class="label" for="maximo">Máximo</label>
+                </div>
+                <div class="div-input-rango">
+                    <input class="input-rango" type="range" name="maximo" id="maximo">
+                </div>
+                <div class="div-numero-minmax">
+                    <p id="num-max" class="numero-maximo">50000$</p>
+                </div>
+                <div class="div-aplicar">
+                    <button id="aplicar" class="aplicar">Aplicar</button>
+                </div>
+            </div>
+
+            <div class="main-div2" id="main-div2">
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>
+    <script src="/app.js"></script>
+</body>
+</html>
+    
