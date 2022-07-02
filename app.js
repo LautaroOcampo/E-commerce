@@ -190,101 +190,33 @@ const eliminar = (idEliminar) => {
 }
 
 //-----NAVBAR CAMBIO-----
-const cambiarImg = (navBoton,prod1,prod2,prod3,prod4,prod5,prod6,prod7,prod8) =>{
-    listItems[navBoton].addEventListener("click",() => {
-        mainDivD.innerHTML = `
-        <div class="main-img-div">
-            <img class="main-img" src="${prod1.imagen}" alt="${prod1.textoA}">
+const cambiarImg = (navItem,param) =>{
+        listItems[navItem].addEventListener("click",() => {
+            mainDivD.innerHTML = ""
+            for(let i = 0 ; i < 8 ; i++){
+            let div = document.createElement("div")
+            div.className = "main-img-div"
+            div.innerHTML = `<div class="main-img-div ">
+            <img class="main-img" src="${productos[i + param].imagen}" alt=${productos[i + param].textoA}>
             <div class="div-item-descripcion">
-                <p>${prod1.nombre}</p>
+                <p class="item-descripcion">${productos[i + param].nombre}</p>
             </div>
                 <div class="boton-agregar-div">
-                <p>${prod1.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
+                <p>${productos[i + param].precio}$</p>
+                <button onclick="comprar(${productos[i + param].id})" class="boton-agregar">Agregar</button>
             </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod2.imagen}" alt="${prod2.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod2.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod2.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod3.imagen}" alt="${prod3.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod3.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod3.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod4.imagen}" alt="${prod4.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod4.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod4.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod5.imagen}" alt="${prod5.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod5.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod5.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod6.imagen}" alt="${prod6.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod6.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod6.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod7.imagen}" alt="${prod7.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod7.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod7.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        <div class="main-img-div">
-            <img class="main-img" src="${prod8.imagen}" alt="${prod8.textoA}">
-            <div class="div-item-descripcion">
-                <p>${prod8.nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${prod8.precio}$</p>
-                <button class="boton-agregar">Agregar</button>
-            </div>
-        </div>
-        `
-        agregarAlCarrito(0,prod1)
-        agregarAlCarrito(1,prod2)
-        agregarAlCarrito(2,prod3)
-        agregarAlCarrito(3,prod4)
-        agregarAlCarrito(4,prod5)
-        agregarAlCarrito(5,prod6)
-        agregarAlCarrito(6,prod7)
-        agregarAlCarrito(7,prod8)
-    })
-    
+        </div>`
+            mainDivD.append(div)
+            }
+})
 }
+cambiarImg(0,0)
+cambiarImg(1,8)
+cambiarImg(2,16)
+cambiarImg(3,24)
+cambiarImg(4,32)
+cambiarImg(5,40)
+
 
 //-----BUSCADOR------
 botonBuscar[0].addEventListener("click",() =>{
@@ -306,7 +238,6 @@ botonBuscar[0].addEventListener("click",() =>{
             </div>`
             mainDivD.append(div)
         }
-    agregarAlCarrito(i,busqueda[i])
     }
 
 })
@@ -348,7 +279,6 @@ botonAplicar.addEventListener("click",() => {
             </div>`
             mainDivD.append(div)
         }
-        agregarAlCarrito(i,busqueda[i])
     }
 
 })
