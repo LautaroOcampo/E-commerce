@@ -81,8 +81,9 @@ let carritoArray = []
 let carritoTotal = document.getElementById("carrito-total")
 let e = localStorage.length
 let botonEliminar = document.getElementById("boton-eliminar")
-let productosParse = []
-productosParse = JSON.parse(localStorage.getItem("carrito"))
+
+
+
 
 
 
@@ -106,44 +107,9 @@ for(const producto of productos){
     mainDivD.append(div)
 }
 
-//----SACAR LAS TILDES---
-const removeAccents = (str) => {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-} 
+let productosParse = []
 
-//-----GUARDAR EN LOCALSTORAGE-----
-const guardar = (clave,valor) =>{
-    localStorage.setItem(clave,valor)
-}
-
-//-----LOCALSTORAGE-----
-const localStorageFun = () => {
-        for(const producto of productosParse){
-        let div = document.createElement("div")
-        div.id = `carrito-${producto.id}`
-        div.className = "carrito-divP"
-        div.innerHTML = `<div class="carrito-divP-P">
-        <img class="carrito-img" src="${producto.imagen}" alt="${producto.textoA}">
-        </div>
-        <div class="carrito-divP-S">
-        <div class="carrito-divP-S-nombre">   
-           <p class="carrito-divP-S-nombre">${producto.nombre}</p>
-        </div>
-        <div class="carrito-divP-S-precio">
-           <p class="carrito-divP-T-precio-p">${producto.precio}$</p>
-        </div>
-        </div>
-        <div class="carrito-divP-T">
-           <button onclick = "eliminar(${producto.id})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
-        </div>`
-    carritoDivP.append(div)
-    carritoP.remove()
-    }
-    let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
-    carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
-}
-
-localStorageFun()
+productosParse = JSON.parse(localStorage.getItem("carrito")) || []
 
 //-----COMPRAR-----
 const comprar = (param) => {
@@ -177,7 +143,7 @@ const agregarAlCarrito = (param) =>{
     
         let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
         carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
-        carritoP.remove()
+
 }
 
 const eliminar = (idEliminar) => {
@@ -187,6 +153,44 @@ const eliminar = (idEliminar) => {
     localStorage.setItem("carrito",JSON.stringify(productosParse))
     carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
+}
+
+//-----LOCALSTORAGE-----
+const localStorageFun = () => {
+    for(const producto of productosParse){
+        let div = document.createElement("div")
+        div.id = `carrito-${producto.id}`
+        div.className = "carrito-divP"
+        div.innerHTML = `<div class="carrito-divP-P">
+        <img class="carrito-img" src="${producto.imagen}" alt="${producto.textoA}">
+        </div>
+        <div class="carrito-divP-S">
+        <div class="carrito-divP-S-nombre">   
+           <p class="carrito-divP-S-nombre">${producto.nombre}</p>
+        </div>
+        <div class="carrito-divP-S-precio">
+           <p class="carrito-divP-T-precio-p">${producto.precio}$</p>
+        </div>
+        </div>
+        <div class="carrito-divP-T">
+           <button onclick = "eliminar(${producto.id})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
+        </div>`
+    carritoDivP.append(div)
+    carritoP.remove()
+    }
+    let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
+        carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
+}
+localStorageFun()
+
+//----SACAR LAS TILDES---
+const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+} 
+
+//-----GUARDAR EN LOCALSTORAGE-----
+const guardar = (clave,valor) =>{
+    localStorage.setItem(clave,valor)
 }
 
 //-----NAVBAR CAMBIO-----
@@ -280,7 +284,6 @@ botonAplicar.addEventListener("click",() => {
             mainDivD.append(div)
         }
     }
-
 })
 
 //-----CARRITO MENU-------
