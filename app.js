@@ -79,8 +79,6 @@ let carritoP = document.getElementById("carrito-p")
 let iconBasura = document.getElementsByClassName("icon-basura")
 let carritoArray = []
 let carritoTotal = document.getElementById("carrito-total")
-let e = localStorage.length
-let botonEliminar = document.getElementById("boton-eliminar")
 
 
 
