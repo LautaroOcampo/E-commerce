@@ -63,7 +63,7 @@ productos.push(new Producto ("Gorro de lana verde oscuro",13999,"/img/Accesorios
 let inputBuscar = document.getElementById("input")
 let botonBuscar = document.getElementsByClassName("icon-buscar")
 let mainDivD = document.getElementById("main-div2") 
-let listItems = document.getElementsByClassName("a-list-item")
+let listItems = document.getElementsByClassName("list-item")
 let mainImg = document.getElementsByClassName("main-img-div")
 let scrollHeader = document.getElementById("header")
 let divInput = document.getElementById("div-input")
@@ -71,20 +71,14 @@ let inputRango = document.getElementsByClassName("input-rango")
 let numMin = document.getElementById("num-min")
 let numMax = document.getElementById("num-max")
 let botonAplicar = document.getElementById("aplicar")
+let nav = document.getElementById("nav")
 let carrito = document.getElementById("carrito")
 let iconCarrito = document.getElementById("icon-carrito")
 let carritoDivP = document.getElementById("carrito-divP")
 let carritoProducto = document.getElementsByClassName("carrito-divP")
 let carritoP = document.getElementById("carrito-p")
 let iconBasura = document.getElementsByClassName("icon-basura")
-let carritoArray = []
 let carritoTotal = document.getElementById("carrito-total")
-
-
-
-
-
-
 
 //-----MENU PRICIPAL-----
 for(const producto of productos){
@@ -113,8 +107,11 @@ productosParse = JSON.parse(localStorage.getItem("carrito")) || []
 const comprar = (param) => {
     const producto = productos.find(ele => ele.id === param)
     productosParse.push(producto)
-    agregarAlCarrito(productosParse.length-1)
     localStorage.setItem("carrito",JSON.stringify(productosParse))
+    agregarAlCarrito(productosParse.length-1)
+    let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0)
+    carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
+    productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
 }
 
 //-----AGREGAR A CARRITO-----
@@ -135,13 +132,9 @@ const agregarAlCarrito = (param) =>{
     </div>
     </div>
     <div class="carrito-divP-T">
-        <button onclick = "eliminar(${productosParse[param].id})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
+        <button  onclick = "eliminar(${productosParse[param].id})"><i class="boton-basura fa-solid fa-trash-can"></i></button>
     </div>`
         carritoDivP.append(div)
-    
-        let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
-        carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
-
 }
 
 const eliminar = (idEliminar) => {
@@ -149,8 +142,9 @@ const eliminar = (idEliminar) => {
     eliminar.remove()
     productosParse = productosParse.filter(ele => ele.id !== idEliminar)
     localStorage.setItem("carrito",JSON.stringify(productosParse))
-    carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
+    let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
+    productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
 }
 
 //-----LOCALSTORAGE-----
@@ -174,10 +168,10 @@ const localStorageFun = () => {
            <button onclick = "eliminar(${producto.id})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
         </div>`
     carritoDivP.append(div)
-    carritoP.remove()
     }
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
-        carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
+    productosParse.length > 0 ? carritoTotal.innerHTML = `Total: ${carritoArrayRed}$` : carritoP.innerText = "Agrega productos al carrito!"
+    
 }
 localStorageFun()
 
@@ -186,60 +180,60 @@ const removeAccents = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 } 
 
-//-----GUARDAR EN LOCALSTORAGE-----
-const guardar = (clave,valor) =>{
-    localStorage.setItem(clave,valor)
-}
-
 //-----NAVBAR CAMBIO-----
-const cambiarImg = (navItem,param) =>{
-        listItems[navItem].addEventListener("click",() => {
-            mainDivD.innerHTML = ""
-            for(let i = 0 ; i < 8 ; i++){
-            let div = document.createElement("div")
-            div.className = "main-img-div"
-            div.innerHTML = `<div class="main-img-div ">
-            <img class="main-img" src="${productos[i + param].imagen}" alt=${productos[i + param].textoA}>
-            <div class="div-item-descripcion">
-                <p class="item-descripcion">${productos[i + param].nombre}</p>
-            </div>
-                <div class="boton-agregar-div">
-                <p>${productos[i + param].precio}$</p>
-                <button onclick="comprar(${productos[i + param].id})" class="boton-agregar">Agregar</button>
-            </div>
-        </div>`
-            mainDivD.append(div)
-            }
-})
+const navbar = () =>{
+let div = document.createElement("div")
+    div.className = "nav-list"
+    div.innerHTML = `
+        <li onclick="navbarCambio(0)" class="list-item">Abrigos</li>
+        <li onclick="navbarCambio(8)" class="list-item">Sacos</li>
+        <li onclick="navbarCambio(16)" class="list-item">Camisas</li>
+        <li onclick="navbarCambio(24)" class="list-item">Pantalones</li>
+        <li onclick="navbarCambio(32)" class="list-item">Zapatos</li>
+        <li onclick="navbarCambio(40)" class="list-item">Accesorios</li>
+        `
+    nav.append(div)
 }
-cambiarImg(0,0)
-cambiarImg(1,8)
-cambiarImg(2,16)
-cambiarImg(3,24)
-cambiarImg(4,32)
-cambiarImg(5,40)
 
+const navbarCambio = (param) => {
+    mainDivD.innerHTML = ""
+    for(let i = 0 ; i < 8 ; i++){
+     let div = document.createElement("div")
+     div.className = "main-img-div"
+     div.innerHTML = `<div class="main-img-div ">
+    <img class="main-img" src="${productos[i + param].imagen}" alt=${productos[i + param].textoA}>
+    <div class="div-item-descripcion">
+        <p class="item-descripcion">${productos[i + param].nombre}</p>
+    </div>
+        <div class="boton-agregar-div">
+        <p>${productos[i + param].precio}$</p>
+        <button onclick="comprar(${productos[i + param].id})" class="boton-agregar">Agregar</button>
+    </div>
+    </div>`
+     mainDivD.append(div)
+     }
+}
+
+navbar()
 
 //-----BUSCADOR------
 botonBuscar[0].addEventListener("click",() =>{
     let busqueda = productos.filter(ele =>removeAccents(ele.nombre.toLowerCase()).includes(removeAccents(inputBuscar.value.toLowerCase())))
     mainDivD.innerHTML = ""
-    for(let i = 0 ; i < 48 ; i++){
-        if(busqueda[i] !== undefined){
+    for(const producto of busqueda){
             let div = document.createElement("div")
             div.innerHTML = `
             <div class="main-img-div ">
-                <img class="main-img" src="${busqueda[i].imagen}" alt=${busqueda[i].textoA}>
+                <img class="main-img" src="${producto.imagen}" alt=${producto.textoA}>
                 <div class="div-item-descripcion">
-                    <p class="item-descripcion">${busqueda[i].nombre}</p>
+                    <p class="item-descripcion">${producto.nombre}</p>
                 </div>
                 <div class="boton-agregar-div">
-                    <p>${busqueda[i].precio}$</p>
+                    <p>${producto.precio}$</p>
                     <button class="boton-agregar" >Agregar</button>
                 </div>
             </div>`
             mainDivD.append(div)
-        }
     }
 
 })
@@ -265,22 +259,20 @@ inputRango[1].addEventListener("input", () =>{
 botonAplicar.addEventListener("click",() => {
     let busqueda = productos.filter(ele => ele.precio < inputRango[1].value * 1000 && ele.precio > inputRango[0].value * 1000)
     mainDivD.innerHTML = ""
-    for(let i = 0 ; i < 48 ; i++){
-        if(busqueda[i] !== undefined){
+    for(const producto of busqueda){
             let div = document.createElement("div")
             div.innerHTML = `
             <div class="main-img-div ">
-                <img class="main-img" src="${busqueda[i].imagen}" alt=${busqueda[i].textoA}>
+                <img class="main-img" src="${producto.imagen}" alt=${producto.textoA}>
                 <div class="div-item-descripcion">
-                    <p class="item-descripcion">${busqueda[i].nombre}</p>
+                    <p class="item-descripcion">${producto.nombre}</p>
                 </div>
                 <div class="boton-agregar-div">
-                    <p>${busqueda[i].precio}$</p>
-                    <a class="boton-agregar" href="#">Agregar</a>
+                    <p>${producto.precio}$</p>
+                    <button onclick="comprar(${producto.id})" class="boton-agregar">Agregar</button>
                 </div>
             </div>`
             mainDivD.append(div)
-        }
     }
 })
 
@@ -289,4 +281,3 @@ iconCarrito.addEventListener("click",() => {
     carrito.classList.toggle("carrito-position")
     carrito.classList.toggle("carrito-positionA")
 })
-

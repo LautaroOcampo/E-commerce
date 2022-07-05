@@ -83,28 +83,11 @@
   padding: 30px 50px 30px 50px;
   font-size: 25px;
   text-decoration: none;
+  cursor:default;
 }
 
 .list-item:hover {
   color: rgb(65, 64, 64);
-}
-
-.a-list-item {
-  text-decoration: none;
-}
-
-.a-list-item:hover {
-  text-decoration: none;
-}
-
-.a-list-item:active {
-  color: black;
-  text-decoration: none;
-}
-
-.a-list-item:visited {
-  text-decoration: none;
-  color: black;
 }
 
 .main {
@@ -307,6 +290,18 @@
   padding: 40px;
 }
 
+.div-perfil{
+  display: flex;
+  justify-content: flex-end;
+  padding-top:30px;
+  padding-right:30px;
+}
+
+.perfil-p{
+  font-size: 18px;
+  padding-left: 5px;
+}
+
 .carrito-divP{
   display: flex;
   align-items: center;
@@ -389,6 +384,10 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+}
+
+.boton-basura{
+text-decoration: none; /*decoración texto*/
 }
 
 .desaparecer {
