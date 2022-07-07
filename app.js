@@ -79,6 +79,7 @@ let carritoProducto = document.getElementsByClassName("carrito-divP")
 let carritoP = document.getElementById("carrito-p")
 let iconBasura = document.getElementsByClassName("icon-basura")
 let carritoTotal = document.getElementById("carrito-total")
+let e = 0
 
 //-----MENU PRICIPAL-----
 for(const producto of productos){
@@ -100,7 +101,6 @@ for(const producto of productos){
 }
 
 let productosParse = []
-
 productosParse = JSON.parse(localStorage.getItem("carrito")) || []
 
 //-----COMPRAR-----
@@ -112,6 +112,28 @@ const comprar = (param) => {
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0)
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
     productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
+    Toastify({
+        text:`Agregaste el producto ${producto.nombre} al carrito `,
+        duration: 20000,
+        className: "pruebe",
+        gravity: "bottom",
+    }).showToast()
+    if(carritoArrayRed > 200000 && e === 0){
+        Swal.fire({ titleText:'Estas gastando mucho dinero',
+                    color:`black`,
+                    icon: `warning`,
+                    iconColor: `red`,
+                    showClass:{
+                    backdrop: `aparicion-alerta`,
+                   },
+                   confirmButtonColor: `black`,
+                   buttonsStyling: `false`,
+                   })
+        e++
+    }
+    else if(carritoArrayRed < 200000 && e === 1){
+        e--
+    }
 }
 
 //-----AGREGAR A CARRITO-----
@@ -230,7 +252,7 @@ botonBuscar[0].addEventListener("click",() =>{
                 </div>
                 <div class="boton-agregar-div">
                     <p>${producto.precio}$</p>
-                    <button class="boton-agregar" >Agregar</button>
+                    <button onclick="comprar(${producto.id})" class="boton-agregar">Agregar</button>
                 </div>
             </div>`
             mainDivD.append(div)
