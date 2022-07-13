@@ -173,7 +173,7 @@
 }
 
 .aplicar {
-  background-color: rgb(32, 32, 32);
+  background:linear-gradient(rgb(114, 114, 114),rgb(32, 32, 32));
   color: white;
   padding: 5px;
   font-size: 15px;
@@ -219,15 +219,21 @@
 
 .boton-agregar {
   text-decoration: none;
-  background-color: rgb(32, 32, 32);
+  background:linear-gradient(rgb(114, 114, 114),rgb(32, 32, 32));
   color: white;
   padding: 5px;
   font-size: 15px;
 }
 
+.div-boton-vermas{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
 .boton-vermas{
   text-decoration: none;
-  background-color: rgb(32, 32, 32);
+  background:linear-gradient(rgb(114, 114, 114),rgb(32, 32, 32));
   color: white;
   padding: 5px;
   font-size: 15px;
@@ -400,7 +406,7 @@ text-decoration: none;
   position: fixed;
   left: 81%;
   color: black;
-  background: rgb(160, 160, 160);
+  background: linear-gradient(rgb(129, 129, 129),rgb(255, 255, 255));
   width: 18%;
   height: 10vh;
   z-index: 50;

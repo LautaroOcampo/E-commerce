@@ -1,64 +1,41 @@
 
-// class Producto {
-//     constructor(nombre,precio,imagen,id){
-//         this.nombre = nombre
-//         this.precio = precio
-//         this.imagen = imagen
-//         this.id = id
-//         this.textoA = `Foto de ${nombre}`
-//     }
-// }
+class Producto {
+    constructor(nombre,precio,imagen,id){
+        this.nombre = nombre
+        this.precio = precio
+        this.imagen = imagen
+        this.id = id
+        this.textoA = `Foto de ${nombre}`
+    }
+}
 
-// const productos = []
-// productos.push(new Producto ("Chaqueta manga larga con solapa",27999,"/img/Abrigos/Chaqueta de negocios para hombre, abrigo Formal de moda, Color sólido, manga larga, con solapa, ajustado.webp",1))
-// productos.push(new Producto ("Abrigo clásico cruzado de mezcla de lana",47999,"/img/Abrigos/Abrigo clásico cruzado de mezcla de lana, cuello con solapa de muesca, para hombre.jpg",2))
-// productos.push(new Producto ("Chaqueta hombres moda rompevientos",28999,"/img/Abrigos/Chaqueta hombres moda rompevientos homme formal formal invierno juego abrigo sólido algodón.jpg",3))
-// productos.push(new Producto ("Montgomery capucha desmontable",29999,"/img/Abrigos/Montgomery capucha desmontable.jpg",4))
-// productos.push(new Producto ("Gabardina de diseño de algodón",34999,"/img/Abrigos/Gabardina de diseño de algodón.jpg",5))
-// productos.push(new Producto ("Abrigo would de hombre de paño perramus",23999,"/img/Abrigos/Abrigo Would De Hombre De Paño Perramus.jpg",6))
-// productos.push(new Producto ("Chaquetón de abrigo",46999,"/img/Abrigos/Chaquetón de abrigo.jpg",7))
-// productos.push(new Producto ("Chaleco groom",79999,"/img/Abrigos/Chaleco groom formal.jpg",8))
-// productos.push(new Producto ("Saco de vestir con botones",30999,"/img/Sacos/Saco de vestir con botones.png",9))
-// productos.push(new Producto ("Saco de invierno",21999,"/img/Sacos/Saco de invierno.jpg",10))
-// productos.push(new Producto ("Saco de vestir elegante",25999,"/img/Sacos/Saco de vestir elegante.jpg",11))
-// productos.push(new Producto ("Saco largo",34999,"/img/Sacos/Saco largo.jpg",12))
-// productos.push(new Producto ("Saco con estampado",29999,"/img/Sacos/Saco estampado.jpg",13))
-// productos.push(new Producto ("Saco Americano",24999,"/img/Sacos/Saco Americano.jpg",14))
-// productos.push(new Producto ("Saco animal print",59999,"/img/Sacos/Saco animal print.jpg",15))
-// productos.push(new Producto ("Saco de piñas de oro",89999,"/img/Sacos/Saco de piñas de oro.jpg",16))
-// productos.push(new Producto ("Camisa formal blanca",14999,"/img/Camisas/Camisa formal blanca.jpeg",17))
-// productos.push(new Producto ("Camisa formal gris",17999,"/img/Camisas/Camisa formal gris.jpg",18))
-// productos.push(new Producto ("Camisa formal negra",19999,"/img/Camisas/Camisa formal negra.jpg",19))
-// productos.push(new Producto ("Camisa formal azul",19999,"/img/Camisas/Camisa formal azul.jpg",20))
-// productos.push(new Producto ("Camisa formal blanca corta",12999,"/img/Camisas/Camisa formal blanca corta.jpg",21))
-// productos.push(new Producto ("Camisa formal negra corta",14999,"/img/Camisas/Camisa formal negra corta.jpg",22))
-// productos.push(new Producto ("Camisa formal de cuadros",17999,"/img/Camisas/Camisa formal de cuadros.jpeg",23))
-// productos.push(new Producto ("Camisa estilo moda",49999,"/img/Camisas/Camisa estilo moda.jpg",24))
-// productos.push(new Producto ("Pantalones formales negros",18999,"/img/Pantalones2/Pantalones formales negros.jpg",25))
-// productos.push(new Producto ("Pantalones formales azules",21999,"/img/Pantalones2/Pantalones formales azules.jpg",26))
-// productos.push(new Producto ("Jean formal gris",15999,"/img/Pantalones2/Jean gris.jpg",27))
-// productos.push(new Producto ("Jean azul roto",17999,"/img/Pantalones2/Jean azul roto.jpg",28))
-// productos.push(new Producto ("Jean formal blanco",22999,"/img/Pantalones2/Jean formal blanco.jpg",29))
-// productos.push(new Producto ("Jean beige",24999,"/img/Pantalones2/Jean Beige.jpg",30))
-// productos.push(new Producto ("Bermuda de jean negra",18999,"/img/Pantalones2/Bermuda de jean negra.jpg",31))
-// productos.push(new Producto ("Bermuda de jean rota",17999,"/img/Pantalones2/Bermuda de jean rota.jpg",32))
-// productos.push(new Producto ("Zapatos marrones de tela",19999,"/img/Zapatos/Zapatos marrones de tela.jpg",33))
-// productos.push(new Producto ("Zapatos de cuero ecológico",29999,"/img/Zapatos/Zapatos de cuero ecologico.jpg",34))
-// productos.push(new Producto ("Zapatos marrones de cuero",26999,"/img/Zapatos/Zapatos marrones de cuero.jpg",35))
-// productos.push(new Producto ("Zapatos blancos con cordones",28999,"/img/Zapatos/Zapatos blancos con cordones.jpg",36))
-// productos.push(new Producto ("Zapatos blancos sin cordones",34999,"/img/Zapatos/Zapatos blancos sin cordones.jpg",37))
-// productos.push(new Producto ("Mocasines negros",19999,"/img/Zapatos/Mocasines negros.jpg",38))
-// productos.push(new Producto ("Zapatos negros de costuras invertidas",24999,"/img/Zapatos/Zapatos negros costuras invertidas.jpg",39))
-// productos.push(new Producto ("Zapatos de piel de cocodrilo",59999,"/img/Zapatos/Zapatos de piel de cocodrilo.jpg",40))
-// productos.push(new Producto ("Anteojos de sol negros",13999,"/img/Accesorios/Anteojos de sol negros.jpg",41))
-// productos.push(new Producto ("Anteojos de sol blancos",16999,"/img/Accesorios/Anteojos de sol blancos.jpg",42))
-// productos.push(new Producto ("Anteojos de sol rojos",17999,"/img/Accesorios/Anteojos de sol rojos.jpg",43))
-// productos.push(new Producto ("Anteojos de sol redondos",22999,"/img/Accesorios/Anteojos de sol redondos.jpg",44))
-// productos.push(new Producto ("Cinturon de cuero con hebilla clasica",9999,"/img/Accesorios/Cinturon de cuero hebilla clasica.jpg",45))
-// productos.push(new Producto ("Cinturon de cuero negro",7999,"/img/Accesorios/Cinturon de cueron negro.jpg",46))
-// productos.push(new Producto ("Gorro de lana gris",11999,"/img/Accesorios/Gorro de lana gris.jpg",47))
-// productos.push(new Producto ("Gorro de lana verde oscuro",13999,"/img/Accesorios/Gorro de lana verde.jpg",48))
+const productos = []
 
+const obtenerProductos = async () => {
+    let response = await fetch("/data.json")
+    let data = await response.json()
+    data.forEach(ele =>{
+        productos.push(new Producto(ele.nombre,ele.precio,ele.imagen,ele.id))
+    })
+    for(const producto of productos){
+        let div = document.createElement("div")
+        div.className = "main-img-div"
+        div.innerHTML = `
+        <div class="main-img-div ">
+                            <img class="main-img" src="${producto.imagen}" alt=${producto.textoA}>
+                            <div class="div-item-descripcion">
+                                <p class="item-descripcion">${producto.nombre}</p>
+                            </div>
+                                <div class="boton-agregar-div">
+                                <p>${producto.precio}$</p>
+                                <button onclick="comprar(${producto.id})" class="boton-agregar">Agregar</button>
+                            </div>
+                        </div>
+        `
+        mainDivD.append(div)
+    }
+}
+obtenerProductos()
 
 let inputBuscar = document.getElementById("input")
 let botonBuscar = document.getElementsByClassName("icon-buscar")
@@ -79,35 +56,14 @@ let carritoProducto = document.getElementsByClassName("carrito-divP")
 let carritoP = document.getElementById("carrito-p")
 let iconBasura = document.getElementsByClassName("icon-basura")
 let carritoTotal = document.getElementById("carrito-total")
+let carritoDivS = document.getElementById("carrito-divS")
+let botonVerMas = document.getElementById("boton-vermas")
+let productosParse = []
+productosParse = JSON.parse(localStorage.getItem("carrito")) || []
+let a = productosParse.length
 let e = 0
 
 
-//-----MENU PRICIPAL-----
-const menuPrincipal = async () => {
-    let response = await fetch("/data.json")
-    let data = await response.json()
-    for(const producto of data){
-        let div = document.createElement("div")
-        div.className = "main-img-div"
-        div.innerHTML = `
-        <div class="main-img-div ">
-                            <img class="main-img" src="${producto.imagen}" alt=${producto.textoA}>
-                            <div class="div-item-descripcion">
-                                <p class="item-descripcion">${producto.nombre}</p>
-                            </div>
-                                <div class="boton-agregar-div">
-                                <p>${producto.precio}$</p>
-                                <button onclick="comprar(${producto.id})" class="boton-agregar">Agregar</button>
-                            </div>
-                        </div>
-        `
-        mainDivD.append(div)
-}
-}
-menuPrincipal()
-
-let productosParse = []
-productosParse = JSON.parse(localStorage.getItem("carrito")) || []
 
 //-----COMPRAR-----
 const comprar = async (param) => {
@@ -122,7 +78,7 @@ const comprar = async (param) => {
     productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
     Toastify({
         text:`Agregaste el producto ${producto.nombre} al carrito `,
-        duration: 20000,
+        duration: 4000,
         className: "pruebe",
         gravity: "bottom",
     }).showToast()
@@ -142,10 +98,12 @@ const comprar = async (param) => {
     else if(carritoArrayRed < 200000 && e === 1){
         e--
     }
-}
+}  
 
 //-----AGREGAR A CARRITO-----
 const agregarAlCarrito = (param) =>{
+    a++
+    if(a < 4){
     let div = document.createElement("div")
     div.id = `carrito-${productosParse[param].id}`
     div.className = "carrito-divP"
@@ -164,40 +122,79 @@ const agregarAlCarrito = (param) =>{
     <div class="carrito-divP-T">
         <button  onclick = "eliminar(${productosParse[param].id})"><i class="boton-basura fa-solid fa-trash-can"></i></button>
     </div>`
-        carritoDivP.append(div)
-}
+    carritoDivP.append(div)
+    }
+    if(a === 4){
+        botonVerMas.classList.remove("desaparecer")
+    }
+    }
+
 
 const eliminar = (idEliminar) => {
     const eliminar = document.getElementById(`carrito-${idEliminar}`)
+    console.log(eliminar);
     eliminar.remove()
-    productosParse = productosParse.filter(ele => ele.id !== idEliminar)
+    const index = productosParse.findIndex((i) => i.id == idEliminar)
+    console.log(index);
+    productosParse.splice(index,1)
+    console.log(productosParse);
     localStorage.setItem("carrito",JSON.stringify(productosParse))
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
     productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
+    a--
+    if(a < 4){
+        botonVerMas.classList.add("desaparecer")
+    }
+    if(productosParse[2]){
+        let div = document.createElement("div")
+        div.id = `carrito-${productosParse[2].id}`
+        div.className = "carrito-divP"
+        div.innerHTML = `
+        <div class="carrito-divP-P">
+                 <img class="carrito-img" src="${productosParse[2].imagen}" alt="${productosParse[2].textoA}">
+        </div>
+        <div class="carrito-divP-S">
+        <div class="carrito-divP-S-nombre">   
+            <p class="carrito-divP-S-nombre">${productosParse[2].nombre}</p>
+        </div>
+        <div class="carrito-divP-S-precio">
+            <p class="carrito-divP-T-precio-p">${productosParse[2].precio}$</p>
+        </div>
+        </div>
+        <div class="carrito-divP-T">
+            <button  onclick = "eliminar(${productosParse[2].id},${index})"><i class="boton-basura fa-solid fa-trash-can"></i></button>
+        </div>`
+        carritoDivP.append(div)
+    }
 }
 
 //-----LOCALSTORAGE-----
 const localStorageFun = () => {
-    for(const producto of productosParse){
-        let div = document.createElement("div")
-        div.id = `carrito-${producto.id}`
-        div.className = "carrito-divP"
-        div.innerHTML = `<div class="carrito-divP-P">
-        <img class="carrito-img" src="${producto.imagen}" alt="${producto.textoA}">
-        </div>
-        <div class="carrito-divP-S">
-        <div class="carrito-divP-S-nombre">   
-           <p class="carrito-divP-S-nombre">${producto.nombre}</p>
-        </div>
-        <div class="carrito-divP-S-precio">
-           <p class="carrito-divP-T-precio-p">${producto.precio}$</p>
-        </div>
-        </div>
-        <div class="carrito-divP-T">
-           <button onclick = "eliminar(${producto.id})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
-        </div>`
-    carritoDivP.append(div)
+    for(let i = 0 ; i < 3 ; i++){
+        if(productosParse[i]){
+            let div = document.createElement("div")
+            div.id = `carrito-${productosParse[i].id}`
+            div.className = "carrito-divP"
+            div.innerHTML = `<div class="carrito-divP-P">
+            <img class="carrito-img" src="${productosParse[i].imagen}" alt="${productosParse[i].textoA}">
+            </div>
+            <div class="carrito-divP-S">
+            <div class="carrito-divP-S-nombre">   
+               <p class="carrito-divP-S-nombre">${productosParse[i].nombre}</p>
+            </div>
+            <div class="carrito-divP-S-precio">
+               <p class="carrito-divP-T-precio-p">${productosParse[i].precio}$</p>
+            </div>
+            </div>
+            <div class="carrito-divP-T">
+               <button onclick = "eliminar(${productosParse[i].id},${i})"><i class="icon-basura fa-solid fa-trash-can"></i></button>
+            </div>`
+        carritoDivP.append(div)
+        }
+    }
+    if(productosParse.length > 3){
+        botonVerMas.classList.remove("desaparecer")
     }
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     productosParse.length > 0 ? carritoTotal.innerHTML = `Total: ${carritoArrayRed}$` : carritoP.innerText = "Agrega productos al carrito!"
@@ -225,34 +222,29 @@ let div = document.createElement("div")
     nav.append(div)
 }
 
-const navbarCambio = async (param) => {
+const navbarCambio = (param) => {
     mainDivD.innerHTML = ""
-    let response = await fetch("/data.json")
-    let data = await response.json()
     for(let i = 0 ; i < 8 ; i++){
      let div = document.createElement("div")
      div.className = "main-img-div"
      div.innerHTML = `<div class="main-img-div ">
-    <img class="main-img" src="${data[i + param].imagen}" alt=${data[i + param].textoA}>
+    <img class="main-img" src="${productos[i + param].imagen}" alt=${productos[i + param].textoA}>
     <div class="div-item-descripcion">
-        <p class="item-descripcion">${data[i + param].nombre}</p>
+        <p class="item-descripcion">${productos[i + param].nombre}</p>
     </div>
         <div class="boton-agregar-div">
-        <p>${data[i + param].precio}$</p>
-        <button onclick="comprar(${data[i + param].id})" class="boton-agregar">Agregar</button>
+        <p>${productos[i + param].precio}$</p>
+        <button onclick="comprar(${productos[i + param].id})" class="boton-agregar">Agregar</button>
     </div>
     </div>`
      mainDivD.append(div)
      }
 }
-
 navbar()
 
 //-----BUSCADOR------
-const buscador = async () => {
-    let response = await fetch("/data.json")
-    let data = await response.json()
-    let busqueda = data.filter(ele =>removeAccents(ele.nombre.toLowerCase()).includes(removeAccents(inputBuscar.value.toLowerCase())))
+botonBuscar[0].addEventListener("click",() =>{
+    let busqueda = productos.filter(ele =>removeAccents(ele.nombre.toLowerCase()).includes(removeAccents(inputBuscar.value.toLowerCase())))
     mainDivD.innerHTML = ""
     for(const producto of busqueda){
             let div = document.createElement("div")
@@ -269,9 +261,6 @@ const buscador = async () => {
             </div>`
             mainDivD.append(div)
     }
-}
-botonBuscar[0].addEventListener("click",() =>{
-    buscador()
 })
 
 //-----SCROLLMENU----
@@ -292,10 +281,8 @@ inputRango[1].addEventListener("input", () =>{
 })
 
 //-----APLICAR RANGO DE PRECIOS-------
-const rangoDePrecios = async () => {  
-    let response = await fetch("/data.json")
-    let data = await response.json()
-    let busqueda = data.filter(ele => ele.precio < inputRango[1].value * 1000 && ele.precio > inputRango[0].value * 1000)
+const rangoDePrecios = () => {  
+    let busqueda = productos.filter(ele => ele.precio < inputRango[1].value * 1000 && ele.precio > inputRango[0].value * 1000)
     mainDivD.innerHTML = ""
     for(const producto of busqueda){
             let div = document.createElement("div")

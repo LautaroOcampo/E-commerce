@@ -18,13 +18,18 @@
             
     </header>
     <main class="main">
-        <section class="main-sectionP">
+        <form class="main-sectionP">
         <div class="div-h1">
             <h1 class="h1">Finalizar compra</h1>
         </div>
         <div class="main-section-div">
             <div class="main-div1">
-                
+                <div class="carrito-divP" id="carrito-divP">
+                </div>
+                <hr>
+                <div class="carrito-divS">
+                <p class="carrito-total" id="carrito-total"></p>
+                </div>
             </div>
             <div class="main-div2">
                 <div class="div-h3">
@@ -32,15 +37,15 @@
                 </div>
                 <div class="div-label-input">
                     <label class="label" for="nombre">Nombre y apellido</label>
-                    <input type="text" id="nombre" class="input">
+                    <input required type="text" id="nombre" class="input">
                 </div>
                 <div class="div-label-input">
                     <label class="label" for="email">Email</label>
-                    <input type="email" id="email" class="input">
+                    <input required type="email" id="email" class="input">
                 </div>
                 <div class="div-label-input">
                     <label class="label" for="telefono">Teléfono</label>
-                    <input type="number" id="telefono" class="input">
+                    <input required type="number" id="telefono" class="input">
                 </div>
                 <div class="div-label-input">
                     <label class="label" for="cuotas">Coutas</label>
@@ -50,15 +55,48 @@
                         <option class="select-option" value=""></option>
                         <option class="select-option" value=""></option>
                     </select> 
-                    
                 </div>
-            </div>
-        </div>    
-        </section>
+                    <div class="div-label-input">
+                        <label class="label" for="tarjeta">Datos de la tarjeta</label>
+                    </div>
+                    <section class="section-tarjeta">
+                        <div class="tarjeta">
+                            <div>
+                                <img class="imagen" src="/img/Sin título-1.png" alt="">
+                            </div>
+                            <div class="tarjeta-abajo">
+                                <div class="tarjeta-abajoI">
+                                    <div class="divs-tarjeta">
+                                        <label class="label-tarjeta" for="tarjeta-numero">Numero de la tarjeta</label>
+                                        <input required id="tarjeta-numero" class="input-tarjeta" type="number">
+                                    </div>
+                                    <div class="divs-tarjeta">
+                                        <label class="label-tarjeta" for="tarjeta-nombre">Nombre del titular</label>
+                                        <input required id="tarjeta-nombre" class="input-tarjeta" type="text" name="" id="">
+                                    </div>
+                                    <div class="divs-tarjeta">
+                                        <label class="label-tarjeta" for="cvc">CVC</label>
+                                        <input required id="cvc" class="input-tarjeta" type="number">
+                                    </div>
+                                </div>
+                                <div class="tarjeta-abajoD">                                 
+                                    <label class="label-vcto" for="vcto">VCTO</label>
+                                    <input required id="vcto" class="input-vcto" type="date" value="hola">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="div-boton-confirmar">
+                        <button type="submit" class="boton-confirmar">Confirmar compra</button>
+                    </div>
+                </div>
+        </div>  
+    </form>
     </main>
     <footer class="footer">
 
     </footer>
-    <script src="/app.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/FinalizarCompra.js"></script>
 </body>
 </html>
