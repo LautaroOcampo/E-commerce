@@ -132,12 +132,9 @@ const agregarAlCarrito = (param) =>{
 
 const eliminar = (idEliminar) => {
     const eliminar = document.getElementById(`carrito-${idEliminar}`)
-    console.log(eliminar);
     eliminar.remove()
     const index = productosParse.findIndex((i) => i.id == idEliminar)
-    console.log(index);
     productosParse.splice(index,1)
-    console.log(productosParse);
     localStorage.setItem("carrito",JSON.stringify(productosParse))
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
