@@ -61,7 +61,7 @@ let botonVerMas = document.getElementById("boton-vermas")
 let productosParse = []
 productosParse = JSON.parse(localStorage.getItem("carrito")) || []
 let carritoLength = productosParse.length
-let e = 0
+let deBug = 0
 
 
 
@@ -82,7 +82,7 @@ const comprar = async (param) => {
         className: "pruebe",
         gravity: "bottom",
     }).showToast()
-    if(carritoArrayRed > 200000 && e === 0){
+    if(carritoArrayRed > 200000 && deBug === 0){
         Swal.fire({ titleText:'Estas gastando mucho dinero',
                     color:`black`,
                     icon: `warning`,
@@ -93,10 +93,10 @@ const comprar = async (param) => {
                    confirmButtonColor: `black`,
                    buttonsStyling: `false`,
                    })
-        e++
+        deBug++
     }
-    else if(carritoArrayRed < 200000 && e === 1){
-        e--
+    else if(carritoArrayRed < 200000 && deBug === 1){
+        deBug--
     }
 }  
 
