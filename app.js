@@ -67,7 +67,7 @@ let e = 0
 
 //-----COMPRAR-----
 const comprar = async (param) => {
-    let response = await fetch("/data.json")
+    let response = await fetch("data.json")
     let data = await response.json()
     const producto = data.find(ele => ele.id === param)
     productosParse.push(producto)
