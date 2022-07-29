@@ -269,8 +269,8 @@
 
 .carrito{
   position: fixed;
-  left: 80%;
-  width: 20%;
+  right: 0px ;
+  width: 400px;
   height: 82.8vh;
   background-color: white;
   transition-property: all;
@@ -278,7 +278,7 @@
 }
 
 .carrito-position{
-  margin-left:20%
+  right: -400px;
 }
 
 .carrito-moveY{
@@ -404,10 +404,11 @@ text-decoration: none;
   display: flex;
   justify-content: center;
   position: fixed;
-  left: 81%;
+  right: 0;
+  margin-right: 20px;
   color: black;
   background: linear-gradient(rgb(129, 129, 129),rgb(255, 255, 255));
-  width: 18%;
+  width: 340px;
   height: 10vh;
   z-index: 50;
   border-radius: 10px;
@@ -423,19 +424,19 @@ text-decoration: none;
   display: none;
 }
 
-@media screen and (max-width: 1360px) {
+@media screen and (max-width: 1530px) {
   .list-item {
     padding: 30px 40px 30px 40px;
   }
 }
 
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1360px) {
   .list-item {
     padding: 30px 30px 30px 30px;
   }
 }
 
-@media screen and (max-width: 1075px) {
+@media screen and (max-width: 1180px) {
   .list-item {
     padding: 30px 20px 30px 20px;
   }
@@ -449,13 +450,13 @@ text-decoration: none;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1030px) {
   .list-item {
     padding: 30px 10px 30px 10px;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 880px) {
   .nav-list {
     width: 100%;
   }

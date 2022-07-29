@@ -305,5 +305,4 @@ botonAplicar.addEventListener("click",() => {
 //-----CARRITO MENU-------
 iconCarrito.addEventListener("click",() => {
     carrito.classList.toggle("carrito-position")
-    carrito.classList.toggle("carrito-positionA")
 })

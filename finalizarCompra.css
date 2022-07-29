@@ -266,3 +266,25 @@
 .footer{
     height: 15vh;
 }
+
+@media screen and (max-width: 880px) {
+    .main-sectionP{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .main-section-div{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .main-div2{
+        width: 100%;
+        justify-content: center;
+    }
+    .main-div1{
+        width: 100%;
+    }
+    .carrito-divP-P{
+        width: 80%;     
+    }
+}
