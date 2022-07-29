@@ -12,7 +12,7 @@ class Producto {
 const productos = []
 
 const obtenerProductos = async () => {
-    let response = await fetch("data.json")
+    let response = await fetch("./data.json")
     let data = await response.json()
     data.forEach(ele =>{
         productos.push(new Producto(ele.nombre,ele.precio,ele.imagen,ele.id))
@@ -60,14 +60,14 @@ let carritoDivS = document.getElementById("carrito-divS")
 let botonVerMas = document.getElementById("boton-vermas")
 let productosParse = []
 productosParse = JSON.parse(localStorage.getItem("carrito")) || []
-let a = productosParse.length
+let carritoLength = productosParse.length
 let e = 0
 
 
 
 //-----COMPRAR-----
 const comprar = async (param) => {
-    let response = await fetch("data.json")
+    let response = await fetch("./data.json")
     let data = await response.json()
     const producto = data.find(ele => ele.id === param)
     productosParse.push(producto)
@@ -102,8 +102,8 @@ const comprar = async (param) => {
 
 //-----AGREGAR A CARRITO-----
 const agregarAlCarrito = (param) =>{
-    a++
-    if(a < 4){
+    carritoLength++
+    if(carritoLength < 4){
     let div = document.createElement("div")
     div.id = `carrito-${productosParse[param].id}`
     div.className = "carrito-divP"
@@ -124,7 +124,7 @@ const agregarAlCarrito = (param) =>{
     </div>`
     carritoDivP.append(div)
     }
-    if(a === 4){
+    if(carritoLength === 4){
         botonVerMas.classList.remove("desaparecer")
     }
     }
@@ -139,8 +139,8 @@ const eliminar = (idEliminar) => {
     let carritoArrayRed = productosParse.reduce((acum,ele) => acum + ele.precio, 0);
     carritoTotal.innerHTML = `Total: ${carritoArrayRed}$`
     productosParse.length > 0 ? carritoP.innerHTML = "" : carritoP.innerText = "Agrega productos al carrito!"
-    a--
-    if(a < 4){
+    carritoLength--
+    if(carritoLength < 4){
         botonVerMas.classList.add("desaparecer")
     }
     if(productosParse[2]){
