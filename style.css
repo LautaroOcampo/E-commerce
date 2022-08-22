@@ -270,7 +270,7 @@
 .carrito{
   position: fixed;
   right: 0px ;
-  width: 400px;
+  width: 423px;
   height: 82.8vh;
   background-color: white;
   transition-property: all;
@@ -278,7 +278,7 @@
 }
 
 .carrito-position{
-  right: -400px;
+  right: -423px;
 }
 
 .carrito-moveY{
