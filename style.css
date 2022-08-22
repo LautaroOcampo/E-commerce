@@ -270,24 +270,23 @@
 .carrito{
   position: fixed;
   right: 0px ;
-  width: 423px;
-  height: 82.8vh;
+  width: 430px;
+  height: 100vh;
   background-color: white;
   transition-property: all;
   transition-duration: 1s;
 }
 
 .carrito-position{
-  right: -423px;
+  right: -430px;
 }
 
 .carrito-moveY{
-  transform: translateY(-58px);
-  -webkit-transform: translateY(-58px);
-  -moz-transform: translateY(-58px);
-  -ms-transform: translateY(-58px);
-  -o-transform: translateY(-58px);
-  height: 87.1vh;
+  transform: translateY(-45px);
+  -webkit-transform: translateY(-45px);
+  -moz-transform: translateY(-45px);
+  -ms-transform: translateY(-45px);
+  -o-transform: translateY(-45px);
 }
 
 .carrito-main{
