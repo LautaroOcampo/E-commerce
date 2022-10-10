@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Odibee Sans', cursive;
+    overflow-x: hidden;
 }
 
 .body{
@@ -139,6 +140,7 @@
     width: 65%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .div-h3{
@@ -154,7 +156,8 @@
 .div-label-input{
     display: flex;
     flex-direction: column;
-    padding: 20px 100px 20px 100px;
+    width: 70%;
+    padding: 10px 0 10px 0;
 }
 
 .label{
@@ -178,7 +181,7 @@
 
 .tarjeta{
     height: 40vh;
-    width: 70%;
+    width: 500px;
     background-color: grey;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -253,6 +256,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
+    padding-bottom: 60px;
 }
 
 .boton-confirmar{
@@ -267,9 +271,24 @@
     height: 15vh;
 }
 
+@media screen and (max-width: 1550px) {
+    .tarjeta{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .tarjeta{
+        width: 300px;
+    }
+}
+
 @media screen and (max-width: 880px) {
     .main-sectionP{
         width: 100%;
+    }
+    .header{
+        justify-content: center;
     }
 }
 @media screen and (max-width: 800px) {
@@ -286,5 +305,29 @@
     }
     .carrito-divP-P{
         width: 80%;     
+    }
+    .tarjeta{
+        width: 500px;
+    }
+    .carrito-divS{
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .tarjeta{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .tarjeta{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .input{
+        width: 90%;
     }
 }

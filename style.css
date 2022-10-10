@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Odibee Sans", cursive;
+  overflow-x: hidden;
 }
 
 .body {
@@ -264,13 +265,13 @@
   justify-content: space-between;
   width: 100%;
   background-color: rgb(32, 32, 32, 0.7);
-  height: 13vh;
+  height: 135px;
 }
 
 .carrito{
   position: fixed;
   right: 0px ;
-  width: 430px;
+  width: 381px;
   height: 100vh;
   background-color: white;
   transition-property: all;
